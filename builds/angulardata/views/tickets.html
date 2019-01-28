@@ -1,0 +1,37 @@
+<div class="card tickets cf">
+  <div class="textintro">
+    <h1>Add ticket</h1>
+    <form class="formgroup addticket cf"
+      name="myform"
+      ng-submit="addticket()"
+      novalidate>
+      <div class="inputwrapper">
+        <input type="text" name="ticketname"
+          placeholder="ticket name"
+          ng-model="ticketname" ng-required="true">
+      </div>
+      <button type="submit" class="btn"
+       ng-disabled="myform.$invalid">+</button>
+    </form>
+</div><!-- tickets cf -->
+
+<div class="card tickets cf">
+  <h2>Your tickets</h2>
+  <div class="ticket" ng-repeat="(key, ticket) in tickets">
+
+    <button class="btn btn-delete tooltip"
+      ng-click="deleteticket(key)"><span>Delete this ticket</span></button>
+
+    <a class="btn btn-checkin tooltip"
+      ng-href="#/checkins/{{currentUser.regUser}}/{{ticket.$id}}">
+      <span>Go to check-in URL</span>
+      </a>
+
+      <a class="btn btn-list tooltip"
+        ng-href="#/checkins/{{currentUser.regUser}}/{{ticket.$id}}/checkinsList">
+        <span>View list of checked-in users</span>
+        </a>
+
+    <span class="text">{{ticket.name}}</span>
+  </div><!-- tickets list -->
+</div><!-- tickets cf -->

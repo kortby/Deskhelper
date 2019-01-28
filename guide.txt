@@ -1,0 +1,22 @@
+$ git clone --bare https://github.com/planetoftheweb/angularregistration.git .git
+
+ $ git config core.bare false
+ $ git reset --hard
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCC1LlK0oKMB4h-fJ0y5ws6jNZTKJTtQTM",
+    authDomain: "angular-registration-508d2.firebaseapp.com",
+    databaseURL: "https://angular-registration-508d2.firebaseio.com",
+    projectId: "angular-registration-508d2",
+    storageBucket: "angular-registration-508d2.appspot.com",
+    messagingSenderId: "110602863491"
+  };
+  firebase.initializeApp(config);
+</script>
+  <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
